@@ -17,9 +17,9 @@ function metadata = customizeMainTB(metadata)
 %% The function customizes the main figure toolbar 
 
 metadata.h.MainTB = findall(metadata.h.Main,'tag','FigureToolBar');
-hMainTBButtons    = findall(metadata.h.MainTB);
+hMainTBButtons    = findall(findall(metadata.h.MainTB));
 delete(hMainTBButtons([14:end 9 6 4]));
-hMainTBButtons    = findall(metadata.h.MainTB);
+hMainTBButtons    = findall(findall(metadata.h.MainTB));
 set(hMainTBButtons(end-3),'Separator','on'); 
 
 hPAbuttons(2)  = uipushtool(metadata.h.MainTB);     %set peak picking parameters
